@@ -1,0 +1,18 @@
+<h2 class="col-md-4">添加物濃度 - <%= Choices[@kind] %></h2>
+</br>
+<form action='food_concentration/result' method='post'>
+<button type='submit' class='btn btn-primary col-md-1 btn-lg'>完成</button>
+</br>
+</br>
+</br>
+
+<div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+  <% times = 0 %>
+  <% @full_food.each do |food, food_list| %>
+  <tr>
+    <% times += 1 %>
+    <%= erb :food_partial, locals: { food_list: food_list, times: times } %>
+  </tr>
+  <% end %>
+</div>
+</form>

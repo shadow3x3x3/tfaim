@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <meta charset='UTF-8' />
+  <title><%= @title %></title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">添加物暴露量計算表</a>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/food_concentration/result/baby">嬰兒</a></li>
+        <li><a href="/food_concentration/result/kid">幼兒</a></li>
+        <li><a href="/food_concentration/result/child">孩童</a></li>
+        <li><a href="/food_concentration/result/teenager">青少年</a></li>
+        <li><a href="/food_concentration/result/adult">成年人</a></li>
+        <li><a href="/food_concentration/result/older">老年人</a></li>
+        <li><a href="/food_concentration/result/elder">高齡老年人</a></li>
+        <li><a href="/food_concentration/result/EDI">攝食暴露量估計總表</a></li>
+        <li><a href="/food_concentration/result/ADI">暴露量估計總表</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="center">
+<h2 class="col-md-5"><%= @title %>攝食量評估表</h2>
+</div>
+</br>
+</br>
+</br>
+</br>
+<div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+  <% times = 0 %>
+  <% @full_food.each do |food, food_list| %>
+  <tr>
+    <% times += 1 %>
+    <%= erb :result_partial, locals: { food_list: food_list, times: times } %>
+  </tr>
+  <% end %>
+</div>
+
+<table class="table table-bordered table-hover">
+  <th></th>
+  <th colspan='2' style='text-align:center'>最大允許濃度</th>
+  <th colspan='2' style='text-align:center'>使用量濃度</th>
+  <tr>
+    <th></th>
+    <th>全體族群平均</th>
+    <th>高暴露族群</th>
+    <th>全體族群平均</th>
+    <th>高暴露族群</th>
+  </tr>
+  <tr>
+    <th><h4>總暴露量估算</h4></th>
+    <th>x</th>
+    <th>x</th>
+    <td><%= @use_avg_sum.round(3) %></th>
+    <th><%= @result %></th>
+  </tr>
+  <tr>
+    <th><h4>高暴露族群的最大攝入量</h4></th>
+    <th colspan='2'style='text-align:center'>x</th>
+    <th colspan='2'style='text-align:center'><%= @use_max.round(3) %></th>
+  </tr>
+  <tr>
+    <th><h4>高暴露族群的最大攝入量相對應的全體族群平均攝入量</h4></th>
+    <th colspan='2' style='text-align:center'>x</th>
+    <th colspan='2' style='text-align:center'><%= @cos_intake %></th>
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<p>添加物名稱</p>
+<form action='food_concentration' method='post'>
+  <ul class='unstyled'>
+    <% Choices.each do |id, text| %>
+      <li>
+        <label class='radio'>
+          <input type='radio' name='kind' value='<%= id %>' id='kind_<%= id %>' checked="ture"/>
+          <%= text %>
+        </label>
+      </li>
+    <% end %>
+  </ul>
+  <button type="submit" class="btn btn-primary">下一步</button>
+</form>

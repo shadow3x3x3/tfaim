@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="heading<%= times.to_s %>">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= times.to_s %>" aria-expanded="true" aria-controls="collapse<%= times.to_s %>">
+        <%= food_list.first %>
+      </a>
+    </h4>
+  </div>
+  <div id="collapse<%= times.to_s %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= times.to_s %>">
+    <div class="panel-body">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th rowspan="3" style='text-align:center;line-height:100px;'>食品名稱</th>
+          <th colspan="6" style='text-align:center'>攝食暴露</th>
+          <tr>
+            <th colspan="3" style='text-align:center'>最大允許濃度</th>
+            <th colspan="3" style='text-align:center'>使用濃度</th>
+          </tr>
+        </tr>
+        <th>全體族群平均</th>
+        <th>高暴露族群</th>
+        <th>佔暴露百分比</th>
+        <th>全體族群平均</th>
+        <th>高暴露族群</th>
+        <th>佔暴露百分比</th>
+        <% food_list.each_with_index do |list, index| %>
+        <tr>
+          <td class="col-md-3"><%= list %></td>
+          <td><h4>x</h4></td>
+          <td><h4>x</h4></td>
+          <td><h4>x</h4></td>
+          <td><h4><%= @use_avg[times - 1][index] unless @use_avg[times - 1].nil? %></h4></td>
+          <td><h4><%= @use_high[times - 1][index] unless @use_high[times - 1].nil? %></h4></td>
+          <td><h4>x</h4></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
