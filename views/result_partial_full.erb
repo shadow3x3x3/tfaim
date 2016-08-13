@@ -35,20 +35,20 @@
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
-          <td><h4><%= @male_use_avg[times - 1][index] unless @male_use_avg[times - 1].nil? %></h4></td>
-          <td><h4><%= @male_use_high[times - 1][index] unless @male_use_high[times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:male_use_avg][times - 1][index] unless @params[:male_use_avg][times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:male_use_high][times - 1][index] unless @params[:male_use_high][times - 1].nil? %></h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
-          <td><h4><%= @female_use_avg[times - 1][index] unless @female_use_avg[times - 1].nil? %></h4></td>
-          <td><h4><%= @female_use_high[times - 1][index] unless @female_use_high[times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:female_use_avg][times - 1][index] unless @params[:female_use_avg][times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:female_use_high][times - 1][index] unless @params[:female_use_high][times - 1].nil? %></h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
           <td><h4>x</h4></td>
-          <td><h4><%= @use_avg[times - 1][index] unless @use_avg[times - 1].nil? %></h4></td>
-          <td><h4><%= @use_high[times - 1][index] unless @use_high[times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:use_avg][times - 1][index] unless @params[:use_avg][times - 1].nil? %></h4></td>
+          <td><h4><%= @params[:use_high][times - 1][index] unless @params[:use_high][times - 1].nil? %></h4></td>
           <td><h4>x</h4></td>
         </tr>
         <% end %>

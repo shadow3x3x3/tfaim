@@ -30,17 +30,17 @@
     <th><h4>總暴露量估算</h4></th>
     <th>x</th>
     <th>x</th>
-    <td><%= @use_avg_sum.round(3) %></th>
-    <th><%= @result %></th>
+    <td><%= @params[:use_avg_sum].round(3) %></th>
+    <th><%= @params[:result] %></th>
   </tr>
   <tr>
     <th><h4>高暴露族群的最大攝入量</h4></th>
     <th colspan='2'style='text-align:center'>x</th>
-    <th colspan='2'style='text-align:center'><%= @use_max.round(3) %></th>
+    <th colspan='2'style='text-align:center'><%= @params[:use_max].round(3) %></th>
   </tr>
   <tr>
     <th><h4>高暴露族群的最大攝入量相對應的全體族群平均攝入量</h4></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @cos_intake %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:cos_intake] %></th>
   </tr>
 </table>

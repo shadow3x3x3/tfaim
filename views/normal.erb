@@ -49,33 +49,33 @@
     <th><h4>總暴露量估算</h4></th>
     <th>x</th>
     <th>x</th>
-    <th><%= @male_use_avg_sum.round(3) %></th>
-    <th><%= @male_result.round(3) %></th>
+    <th><%= @params[:male_use_avg_sum].round(3) %></th>
+    <th><%= @params[:male_result].round(3) %></th>
     <th>x</th>
     <th>x</th>
-    <th><%= @female_use_avg_sum.round(3) %></th>
-    <th><%= @female_result.round(3) %></th>
+    <th><%= @params[:female_use_avg_sum].round(3) %></th>
+    <th><%= @params[:female_result].round(3) %></th>
     <th>x</th>
     <th>x</th>
-    <th><%= @use_avg_sum.round(3) %></th>
-    <th><%= @result.round(3) %></th>
+    <th><%= @params[:use_avg_sum].round(3) %></th>
+    <th><%= @params[:result].round(3) %></th>
   </tr>
   <tr>
     <th><h4>高暴露族群的最大攝入量</h4></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @male_use_max %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:male_use_max] %></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @female_use_max %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:female_use_max] %></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @use_max %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:use_max] %></th>
   </tr>
   <tr>
     <th><h4>高暴露族群的最大攝入量相對應的全體族群平均攝入量</h4></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @male_cos_intake %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:male_cos_intake] %></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @female_cos_intake %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:female_cos_intake] %></th>
     <th colspan='2' style='text-align:center'>x</th>
-    <th colspan='2' style='text-align:center'><%= @cos_intake %></th>
+    <th colspan='2' style='text-align:center'><%= @params[:cos_intake] %></th>
   </tr>
 </table>
