@@ -1,4 +1,4 @@
-require_relative 'food_util'
+require_relative '../util/food_util'
 # Adult Module
 module Adult
   extend FoodUtil

@@ -1,4 +1,4 @@
-require_relative 'food_util'
+require_relative '../util/food_util'
 # Older Module
 module Older
   extend FoodUtil

@@ -1,14 +1,14 @@
-require_relative 'food_util'
-# Teenager Module
-module Teenager
+require_relative '../util/food_util'
+# Elder Module
+module Elder
   extend FoodUtil
 
-  @m_avg  = reader_to_f('assets/type/teenager/intake_average_male.txt')
-  @m_high = reader_to_f('assets/type/teenager/intake_high_male.txt')
-  @f_avg  = reader_to_f('assets/type/teenager/intake_average_female.txt')
-  @f_high = reader_to_f('assets/type/teenager/intake_high_female.txt')
-  @avg    = reader_to_f('assets/type/teenager/intake_average.txt')
-  @high   = reader_to_f('assets/type/teenager/intake_high.txt')
+  @m_avg  = reader_to_f('assets/type/elder/intake_average_male.txt')
+  @m_high = reader_to_f('assets/type/elder/intake_high_male.txt')
+  @f_avg  = reader_to_f('assets/type/elder/intake_average_female.txt')
+  @f_high = reader_to_f('assets/type/elder/intake_high_female.txt')
+  @avg    = reader_to_f('assets/type/elder/intake_average.txt')
+  @high   = reader_to_f('assets/type/elder/intake_high.txt')
 
   def self.max_average
   end

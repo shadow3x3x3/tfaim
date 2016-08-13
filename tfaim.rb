@@ -1,11 +1,7 @@
-require_relative 'food'
-require_relative 'baby'
-require_relative 'kid'
-require_relative 'child'
-require_relative 'teenager'
-require_relative 'adult'
-require_relative 'older'
-require_relative 'elder'
+require_relative 'src/food'
+
+# read every ages
+Dir[File.dirname(__FILE__) + '/src/age/*'].each { |file| require_relative file }
 
 # Tfaim
 class Tfaim < Food
