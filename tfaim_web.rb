@@ -52,6 +52,7 @@ end
 
 get '/food_concentration/result/:type' do
   @full_food = full_food
+  
   params_baby     = calc_baby(t)
   params_kid      = calc_kid(t)
   params_child    = calc_child(t)
@@ -98,9 +99,13 @@ get '/food_concentration/result/:type' do
     erb :normal, layout: :result_layout
   when 'EDI'
     @title = '攝食暴露量估計總表'
+
+    @params = calc_EDI(params_baby, params_kid, params_child, params_teenager, params_adult, params_older, params_elder)
     erb :EDI, layout: :result_layout
   when 'ADI'
     @title = '暴露量估計總表'
+
+    @params = calc_ADI(params_baby, params_kid, params_child, params_teenager, params_adult, params_older, params_elder)
     erb :ADI, layout: :result_layout
   end
 end
@@ -221,6 +226,54 @@ def calc_upper(params)
   params[:use_max]       = params[:use_high].flatten.max
   params[:cos_intake]    = find_cos(params[:use_avg], params[:use_max], params[:use_high])
   params[:result]        = params[:use_avg_sum] + params[:use_max] - params[:cos_intake]
+  params
+end
+
+def calc_EDI(baby, kid, child, teenager, adult, older, elder)
+  params = {}
+  params[:baby_percent] = baby[:use_avg_sum]
+  params[:baby_avg]     = baby[:result]
+
+  params[:kid_percent] = kid[:use_avg_sum]
+  params[:kid_avg]     = kid[:result]
+
+  params[:child_percent] = child[:use_avg_sum]
+  params[:child_avg]     = child[:result]
+
+  params[:teenager_male_percent]   = teenager[:male_use_avg_sum]
+  params[:teenager_male_avg]       = teenager[:male_result]
+  params[:teenager_female_percent] = teenager[:female_use_avg_sum]
+  params[:teenager_female_avg]     = teenager[:female_result]
+  params[:teenager_percent]        = teenager[:use_avg_sum]
+  params[:teenager_avg]            = teenager[:result]
+
+  params[:adult_male_percent]   = adult[:male_use_avg_sum]
+  params[:adult_male_avg]       = adult[:male_result]
+  params[:adult_female_percent] = adult[:female_use_avg_sum]
+  params[:adult_female_avg]     = adult[:female_result]
+  params[:adult_percent]        = adult[:use_avg_sum]
+  params[:adult_avg]            = adult[:result]
+
+  params[:older_male_percent]   = older[:male_use_avg_sum]
+  params[:older_male_avg]       = older[:male_result]
+  params[:older_female_percent] = older[:female_use_avg_sum]
+  params[:older_female_avg]     = adult[:female_result]
+  params[:older_percent]        = older[:use_avg_sum]
+  params[:older_avg]            = adult[:result]
+
+  params[:elder_male_percent]   = elder[:male_use_avg_sum]
+  params[:elder_male_avg]       = elder[:male_result]
+  params[:elder_female_percent] = elder[:female_use_avg_sum]
+  params[:elder_female_avg]     = elder[:female_result]
+  params[:elder_percent]        = elder[:use_avg_sum]
+  params[:elder_avg]            = elder[:result]
+
+  params
+end
+
+def calc_ADI
+  params = {}
+
   params
 end
 
