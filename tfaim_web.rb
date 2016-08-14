@@ -4,10 +4,8 @@ require 'tilt/erb'
 require 'pry'
 require_relative 'tfaim'
 
-Choices = { 'Benzoic_cid' => '苯甲酸'
-          }.freeze
-Kind    = { 'Benzoic_cid' => 5
-          }.freeze
+Choices = { 'Benzoic_cid' => '苯甲酸' }.freeze
+Kind    = { 'Benzoic_cid' => 5 }.freeze
 t = Tfaim.new
 full_food = {}
 full_food[:milk]       = t.milk
@@ -52,7 +50,7 @@ end
 
 get '/food_concentration/result/:type' do
   @full_food = full_food
-  
+
   params_baby     = calc_baby(t)
   params_kid      = calc_kid(t)
   params_child    = calc_child(t)
@@ -271,8 +269,44 @@ def calc_EDI(baby, kid, child, teenager, adult, older, elder)
   params
 end
 
-def calc_ADI
+def calc_ADI(baby, kid, child, teenager, adult, older, elder)
   params = {}
+  params[:baby_percent] = baby[:use_avg_sum] * 100 / 5
+  params[:baby_avg]     = baby[:result] * 100 / 5
+
+  params[:kid_percent] = kid[:use_avg_sum] * 100 / 5
+  params[:kid_avg]     = kid[:result] * 100 / 5
+
+  params[:child_percent] = child[:use_avg_sum] * 100 / 5
+  params[:child_avg]     = child[:result] * 100 / 5
+
+  params[:teenager_male_percent]   = teenager[:male_use_avg_sum] * 100 / 5
+  params[:teenager_male_avg]       = teenager[:male_result] * 100 / 5
+  params[:teenager_female_percent] = teenager[:female_use_avg_sum] * 100 / 5
+  params[:teenager_female_avg]     = teenager[:female_result] * 100 / 5
+  params[:teenager_percent]        = teenager[:use_avg_sum] * 100 / 5
+  params[:teenager_avg]            = teenager[:result] * 100 / 5
+
+  params[:adult_male_percent]   = adult[:male_use_avg_sum] * 100 / 5
+  params[:adult_male_avg]       = adult[:male_result] * 100 / 5
+  params[:adult_female_percent] = adult[:female_use_avg_sum] * 100 / 5
+  params[:adult_female_avg]     = adult[:female_result] * 100 / 5
+  params[:adult_percent]        = adult[:use_avg_sum] * 100 / 5
+  params[:adult_avg]            = adult[:result] * 100 / 5
+
+  params[:older_male_percent]   = older[:male_use_avg_sum] * 100 / 5
+  params[:older_male_avg]       = older[:male_result] * 100 / 5
+  params[:older_female_percent] = older[:female_use_avg_sum] * 100 / 5
+  params[:older_female_avg]     = adult[:female_result] * 100 / 5
+  params[:older_percent]        = older[:use_avg_sum] * 100 / 5
+  params[:older_avg]            = adult[:result] * 100 / 5
+
+  params[:elder_male_percent]   = elder[:male_use_avg_sum] * 100 / 5
+  params[:elder_male_avg]       = elder[:male_result] * 100 / 5
+  params[:elder_female_percent] = elder[:female_use_avg_sum] * 100 / 5
+  params[:elder_female_avg]     = elder[:female_result] * 100 / 5
+  params[:elder_percent]        = elder[:use_avg_sum] * 100 / 5
+  params[:elder_avg]            = elder[:result] * 100 / 5
 
   params
 end
