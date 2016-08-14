@@ -16,7 +16,7 @@
         <% food_list.each_with_index do |list, index| %>
         <tr>
           <td class="col-md-4"><%= list %></td>
-          <td><input type="number" min=0 name="<%= "#{times}_#{index + 1}" %>" id="<%= list %>"></td>
+          <td><input type="number" min=0 name="<%= "#{times}_#{index + 1}" %>" id="<%= list %>" step="0.01"></td>
         </tr>
         <% end %>
       </table>
